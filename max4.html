@@ -8,12 +8,12 @@
 <meta property="og:type" content="website">
 <meta property="og:title" content="Susana & Juan Camilo">
 <meta property="og:description" content="Nos casamos el 5 de enero de 2027 en Envigado, Antioquia. ¡Acompáñanos!">
-<meta property="og:image" content="https://susicc.github.io/wedding-invitation/og-image.jpg">
-<meta property="og:url" content="https://susicc.github.io/wedding-invitation/max4.html">
+<meta property="og:image" content="https://susicc.github.io/susana-juancamilo/og-image.jpg">
+<meta property="og:url" content="https://susicc.github.io/susana-juancamilo/max4.html">
 <meta name="twitter:card" content="summary_large_image">
 <meta name="twitter:title" content="Susana & Juan Camilo">
 <meta name="twitter:description" content="Nos casamos el 5 de enero de 2027 en Envigado, Antioquia. ¡Acompáñanos!">
-<meta name="twitter:image" content="https://susicc.github.io/wedding-invitation/og-image.jpg">
+<meta name="twitter:image" content="https://susicc.github.io/susana-juancamilo/og-image.jpg">
 <style>
   @import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&family=EB+Garamond:ital,wght@0,400;0,500;0,600;1,400;1,500&display=swap');
 
@@ -368,7 +368,7 @@
   .rsvp-btn svg{width:18px;height:18px;}
   .rsvp-note{
     margin-top:14px;
-    font-size:1rem;
+    font-size:1.15rem;
     color:var(--ink-soft);
   }
   .schedule-note{
@@ -386,6 +386,10 @@
   .rsvp-wide .rsvp-btn{align-self:center;}
   .rsvp-wide .rsvp-deadline{margin-top:0;text-align:center;}
   .rsvp-wide p.rsvp-note{margin:16px auto 0;max-width:44ch;text-align:center;}
+  .rsvp-phone{color:inherit;text-decoration:none;white-space:nowrap;}
+  .rsvp-phone:hover{text-decoration:underline;}
+  .wa-icon{vertical-align:middle;position:relative;top:-1px;margin-right:4px;}
+  .rsvp-note .rsvp-phone{display:inline-block;margin-top:6px;}
 
   footer{
     padding-block:36px 56px;
@@ -536,10 +540,10 @@
     </div>
     <p style="color:var(--ink-soft);max-width:48ch;margin:0 auto 18px;font-size:1.15rem;">Esta invitaci&oacute;n es para <strong>4</strong> personas.<br>Completa el formulario para confirmar cu&aacute;ntas personas asistir&aacute;n y sus preferencias alimentarias.</p>
     <form id="rsvpForm" style="max-width:420px;margin:0 auto;text-align:left;">
-      <label style="display:block;margin:0 0 16px;color:var(--ink-soft);font-size:0.95rem;">Nombre completo
+      <label style="display:block;margin:0 0 16px;color:var(--ink-soft);font-size:1.05rem;">Nombre completo
         <input type="text" id="rsvpName" required style="display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:'EB Garamond',Georgia,serif;font-size:1rem;box-sizing:border-box;">
       </label>
-      <label style="display:block;margin:0 0 16px;color:var(--ink-soft);font-size:0.95rem;">&iquest;Cu&aacute;ntas personas asistir&aacute;n?
+      <label style="display:block;margin:0 0 16px;color:var(--ink-soft);font-size:1.05rem;">&iquest;Cu&aacute;ntas personas asistir&aacute;n?
         <select id="rsvpCount" required style="display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:'EB Garamond',Georgia,serif;font-size:1rem;box-sizing:border-box;">
           <option value="">Selecciona&hellip;</option>
           <option value="0">0 &mdash; No podr&eacute; asistir</option>
@@ -554,6 +558,10 @@
       </button>
       <span class="rsvp-deadline">por favor confirma antes del <span data-field="rsvp-deadline">24 de noviembre de 2026</span></span>
       </div>
+      <p class="rsvp-note">Cualquier inquietud nos pueden contactar a:<br>
+        <a href="https://wa.me/13123077870" target="_blank" rel="noopener" class="rsvp-phone"><svg class="wa-icon" viewBox="0 0 24 24" width="15" height="15" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.067 2.003a9.957 9.957 0 0 0-8.456 15.14L2 22l4.964-1.588a9.953 9.953 0 0 0 5.103 1.393h.004c5.5 0 9.96-4.46 9.962-9.96a9.907 9.907 0 0 0-2.92-7.041 9.907 9.907 0 0 0-7.046-2.901zm.001 18.253h-.003a8.27 8.27 0 0 1-4.212-1.154l-.303-.18-3.137.823.837-3.057-.197-.314a8.264 8.264 0 0 1-1.267-4.406c.002-4.556 3.712-8.264 8.287-8.264a8.233 8.233 0 0 1 5.858 2.428 8.226 8.226 0 0 1 2.425 5.843c-.002 4.557-3.712 8.281-8.288 8.281z"/></svg>+1 (312) 307-7870</a><br>
+        <a href="https://wa.me/16085987955" target="_blank" rel="noopener" class="rsvp-phone"><svg class="wa-icon" viewBox="0 0 24 24" width="15" height="15" fill="#25D366" aria-hidden="true"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347zM12.067 2.003a9.957 9.957 0 0 0-8.456 15.14L2 22l4.964-1.588a9.953 9.953 0 0 0 5.103 1.393h.004c5.5 0 9.96-4.46 9.962-9.96a9.907 9.907 0 0 0-2.92-7.041 9.907 9.907 0 0 0-7.046-2.901zm.001 18.253h-.003a8.27 8.27 0 0 1-4.212-1.154l-.303-.18-3.137.823.837-3.057-.197-.314a8.264 8.264 0 0 1-1.267-4.406c.002-4.556 3.712-8.264 8.287-8.264a8.233 8.233 0 0 1 5.858 2.428 8.226 8.226 0 0 1 2.425 5.843c-.002 4.557-3.712 8.281-8.288 8.281z"/></svg>+1 (608) 598-7955</a>
+      </p>
       <div id="rsvpStatus" style="margin-top:12px;text-align:center;font-size:0.95rem;font-weight:600;"></div>
     </form>
   </section>
@@ -561,7 +569,7 @@
   (function(){
     var MAX_TOTAL = 4;
     var ENTRADA_OPTIONS = ['Pescado', 'Ensalada'];
-    var PLATO_OPTIONS = ['Pollo', 'Carne'];
+    var PLATO_OPTIONS = ['Pollo', 'Carne', 'Vegetariano'];
     var countSelect = document.getElementById('rsvpCount');
     var foodContainer = document.getElementById('rsvpFoodContainer');
     var selectStyle = 'display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:\'EB Garamond\',Georgia,serif;font-size:1rem;box-sizing:border-box;';
