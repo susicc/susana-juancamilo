@@ -556,6 +556,9 @@
         </select>
       </label>
       <div id="rsvpFoodContainer"></div>
+      <label style="display:block;margin:18px 0 16px;color:var(--ink);font-size:1.15rem;">Cu&eacute;ntanos si tienes alguna alergia alimentaria
+        <textarea id="rsvpAllergies" rows="2" placeholder="Ej. mariscos, man&iacute;, gluten&hellip; (opcional)" style="display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:'EB Garamond',Georgia,serif;font-size:1.15rem;box-sizing:border-box;resize:vertical;"></textarea>
+      </label>
       <div class="rsvp-row" style="margin-top:8px;">
       <button type="submit" class="rsvp-btn">
         <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M20 6L9 17l-5-5"/></svg>
@@ -638,6 +641,7 @@
       e.preventDefault();
       var name = document.getElementById('rsvpName').value.trim();
       var count = countSelect.value;
+      var allergies = document.getElementById('rsvpAllergies').value.trim();
       var entradaSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-entrada-select'));
       var platoSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-plato-select'));
       var lines = [
@@ -648,6 +652,7 @@
         lines.push('Invitado ' + (gi + 1) + ' \u2014 Entrada: ' + (entradaSelects[gi].value || '(sin seleccionar)'));
         lines.push('Invitado ' + (gi + 1) + ' \u2014 Plato fuerte: ' + (platoSelects[gi].value || '(sin seleccionar)'));
       }
+      lines.push('Alergias: ' + (allergies || 'Ninguna'));
       var subject = 'Confirmaci\u00f3n de asistencia - 5 de enero de 2027 (' + (name || 'sin nombre') + ')';
       var body = lines.join('\n');
 
