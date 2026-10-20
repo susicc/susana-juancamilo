@@ -556,7 +556,7 @@
         </select>
       </label>
       <div id="rsvpFoodContainer"></div>
-      <label style="display:block;margin:18px 0 16px;color:var(--ink);font-size:1.15rem;">Cu&eacute;ntanos si tienes alguna alergia alimentaria
+      <label style="display:block;margin:18px 0 16px;color:var(--ink);font-size:1.15rem;">Cu&eacute;ntanos si tienes alguna alergia o restricci&oacute;n alimentaria
         <textarea id="rsvpAllergies" rows="2" placeholder="Ej. mariscos, man&iacute;, gluten&hellip; (opcional)" style="display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:'EB Garamond',Georgia,serif;font-size:1.15rem;box-sizing:border-box;resize:vertical;"></textarea>
       </label>
       <div class="rsvp-row" style="margin-top:8px;">
@@ -576,24 +576,20 @@
   <script>
   (function(){
     var MAX_TOTAL = 2;
-    var ENTRADA_OPTIONS = ['Pescado', 'Ensalada'];
-    var PLATO_OPTIONS = ['Pollo', 'Carne de res'];
     var countSelect = document.getElementById('rsvpCount');
     var foodContainer = document.getElementById('rsvpFoodContainer');
     var selectStyle = 'display:block;width:100%;margin-top:6px;padding:10px 12px;border:1px solid var(--rose-soft);border-radius:10px;font-family:\'EB Garamond\',Georgia,serif;font-size:1.15rem;box-sizing:border-box;';
 
-    function buildCourseSelect(className, options){
+    function buildYesNoSelect(className){
       var select = document.createElement('select');
       select.required = true;
       select.className = className;
       select.style.cssText = selectStyle;
-      var opts = '<option value="">Selecciona&hellip;</option>';
-      options.forEach(function(f){ opts += '<option value="' + f + '">' + f + '</option>'; });
-      select.innerHTML = opts;
+      select.innerHTML = '<option value="">Selecciona&hellip;</option><option value="S\u00ed">S\u00ed</option><option value="No">No</option>';
       return select;
     }
 
-    function buildCourseLabel(text, select){
+    function buildQuestionLabel(text, select){
       var label = document.createElement('label');
       label.style.display = 'block';
       label.style.margin = '0 0 14px';
@@ -605,7 +601,7 @@
       return label;
     }
 
-    function renderFoodFields(count){
+    function renderGuestFields(count){
       foodContainer.innerHTML = '';
       for (var i = 1; i <= count; i++){
         var wrap = document.createElement('div');
@@ -621,8 +617,8 @@
         heading.textContent = 'Invitado ' + i;
         wrap.appendChild(heading);
 
-        wrap.appendChild(buildCourseLabel('Entrada', buildCourseSelect('rsvp-entrada-select', ENTRADA_OPTIONS)));
-        wrap.appendChild(buildCourseLabel('Plato fuerte', buildCourseSelect('rsvp-plato-select', PLATO_OPTIONS)));
+        wrap.appendChild(buildQuestionLabel('\u00bfComes pescado?', buildYesNoSelect('rsvp-pescado-select')));
+        wrap.appendChild(buildQuestionLabel('\u00bfComes carne de res?', buildYesNoSelect('rsvp-carne-select')));
 
         foodContainer.appendChild(wrap);
       }
@@ -630,7 +626,7 @@
 
     countSelect.addEventListener('change', function(){
       var n = parseInt(countSelect.value || '0', 10);
-      renderFoodFields(n);
+      renderGuestFields(n);
     });
 
     var rsvpForm = document.getElementById('rsvpForm');
@@ -642,15 +638,15 @@
       var name = document.getElementById('rsvpName').value.trim();
       var count = countSelect.value;
       var allergies = document.getElementById('rsvpAllergies').value.trim();
-      var entradaSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-entrada-select'));
-      var platoSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-plato-select'));
+      var pescadoSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-pescado-select'));
+      var carneSelects = Array.prototype.slice.call(foodContainer.querySelectorAll('.rsvp-carne-select'));
       var lines = [
         'Nombre: ' + name,
         'N\u00famero de personas que asistir\u00e1n: ' + count + ' (m\u00e1ximo permitido: ' + MAX_TOTAL + ')'
       ];
-      for (var gi = 0; gi < entradaSelects.length; gi++){
-        lines.push('Invitado ' + (gi + 1) + ' \u2014 Entrada: ' + (entradaSelects[gi].value || '(sin seleccionar)'));
-        lines.push('Invitado ' + (gi + 1) + ' \u2014 Plato fuerte: ' + (platoSelects[gi].value || '(sin seleccionar)'));
+      for (var gi = 0; gi < pescadoSelects.length; gi++){
+        lines.push('Invitado ' + (gi + 1) + ' \u2014 \u00bfComes pescado?: ' + (pescadoSelects[gi].value || '(sin seleccionar)'));
+        lines.push('Invitado ' + (gi + 1) + ' \u2014 \u00bfComes carne de res?: ' + (carneSelects[gi].value || '(sin seleccionar)'));
       }
       lines.push('Alergias: ' + (allergies || 'Ninguna'));
       var subject = 'Confirmaci\u00f3n de asistencia - 5 de enero de 2027 (' + (name || 'sin nombre') + ')';
